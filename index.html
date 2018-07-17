@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>五岳天气</title>
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>五岳天气</h1>
+
+            <div class="search">
+                <span>检索</span>
+                <input type="text" id="search" value="" data-bind='textInput: locInput'>
+            </div>
+
+        </div>
+
+
+        <div class="content">
+
+            <div class="list-box">
+                <ul data-bind='foreach: listShow'>
+                    <li data-bind='text: title, click: findMarker'></li>
+                </ul>
+            </div>
+
+            <div id="map"></div>
+
+        </div> 
+    </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/knockout-3.4.2.js"></script>
+        <!--若js加载失败则弹出提示框信息-->
+        <script async defer src="http://webapi.amap.com/maps?v=1.4.8&key=5450c7b07c93b7fb0ce46e905d8133d5&callback=initMap" onerror="alert('The map api could not be loaded.')">
+        </script>
+        <script src="js/script.js"></script>
+</body>
+
+</html>
