@@ -7,27 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>五岳天气</title>
     <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css" />
-
+    <link rel="stylesheet" href="css/icomoon.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
     <div class="container">
-
+    
         <div class="header">
             <h1>五岳天气</h1>
 
             <div class="search">
-                <span>检索</span>
                 <input type="text" id="search" value="" data-bind='textInput: locInput'>
             </div>
-
+        <div data-bind="click:hbClick"><i class="icon-menu"></i></div>
         </div>
 
 
         <div class="content">
-
-            <div class="list-box">
+            <div data-bind="css: { menu-hide:true, list-box:isSevere }">
                 <ul data-bind='foreach: listShow'>
                     <li data-bind='text: title, click: findMarker'></li>
                 </ul>

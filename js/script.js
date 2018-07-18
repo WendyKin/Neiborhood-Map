@@ -36,6 +36,18 @@ var Model = {
 //ViewModel，方法参考论坛 https://discussions.youdaxue.com/t/marker/56374/10
 var ViewModel = function () {
 	var self = this;
+	self.menuHide = ko.observable(false);
+	
+	self.hbClick = function () {
+		self.menuHide(!self.menuHide());
+	};
+
+	self.menu-hide = ko.pureComputed (function() {
+	  var value = self.menuHide;
+	  console.log(value);
+	  return value;
+	},self);
+    	
 	//绑定输入框，输入框初始数值为空
 	self.locInput = ko.observable('');
 	//绑定locations数组
@@ -126,6 +138,7 @@ function mkClick() {
 var position = this.getPosition()
 var weatherUrl = "https://free-api.heweather.com/s6/weather/forecast?location=" + position + "&key=30962604458e42ffbaaf4c54ec3e27d4";
 var self = this; // 用 self 保存 this，方便下方引用
+
 // 在这里发起异步请求
 $.ajax({
 	async: true,
