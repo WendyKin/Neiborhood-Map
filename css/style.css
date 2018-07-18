@@ -18,9 +18,10 @@ li {
 
 .container {
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     margin: 0;
     padding: 0;
+   
 }
 
 .header {
@@ -38,14 +39,15 @@ h1 {
 }
 
 .search {
-    margin: 10px;
+    margin: 10px 5px;
     line-height: 30px;
 }
 
 input {
-    font-size: 12px;
-    width: 95%;
-    margin: 0 0 0 10px;
+    font-size: 1.5em;
+    height: 1.7em;
+    width: 98%;
+    margin-left: 10px;
 }
 
 .icon-menu {
@@ -58,8 +60,6 @@ input {
     position: absolute;
 }
 
-.icon-hide {display:none};
-
 .content {
     position: relative;
     flex: 1;
@@ -68,12 +68,13 @@ input {
     margin: 0;
     padding: 0;
     bottom: 0;
+ 
 }
 
 #map {
     position: absolute;
     height: 90%;
-    width: 75%;
+    width: 98%;
     top: 0;
     bottom: 0;
     right: 10px;
@@ -84,12 +85,13 @@ input {
     height: 90%;
     line-height: 30px;
     text-align: left;
-    width: 25%;
+    width: 4.5em;
     top: 0;
-    left: 0;
-    bottom: 0;
-    margin: 5px 0 0 35px;
+    padding: 0 0 0 35px;
+    background: #fff;
     color: #0f74f1;
+    opacity:0.8;
+    filter:alpha(opacity=80);
     z-index: 3;
     transform: translate3d(0, 0, 0);
     transition: transform 0.2s;
@@ -101,4 +103,7 @@ input {
 .list-box ul {
     margin: 10px;
 }
-.menu-hide {display: none}
+
+@media screen and (min-width: 520px) {
+.icon-menu {display: none;}
+}
